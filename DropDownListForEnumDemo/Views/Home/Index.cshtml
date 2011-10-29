@@ -1,0 +1,18 @@
+﻿@{ViewBag.Title = "Home Page";}
+@using DropDownListForEnumDemo.Models
+@model CarsModel
+<h2>@ViewBag.Message</h2>
+@using (Html.BeginForm()) {
+    <div>
+        <fieldset>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.SelectedCar)
+            </div>
+            <div class="editor-field">
+                @Html.DropDownListFor(m => m.SelectedCar, "-- Select --")
+                @Html.ValidationMessageFor(m => m.SelectedCar)
+            </div>
+        </fieldset>
+        <input type="submit" value="Click Me"/>
+    </div>
+}
